@@ -57,11 +57,11 @@ public class MainActivity extends AppCompatActivity implements TvShowslistener {
                 }
             }
         });
-        binding.imagewatchlist.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                startActivity(new Intent(getApplicationContext(),WatchlistActivity.class));
-            }
+        binding.imagewatchlist.setOnClickListener(view -> startActivity(new Intent(getApplicationContext(),WatchlistActivity.class)));
+
+        binding.imagesearch.setOnClickListener(view -> {
+            Intent intent=new Intent(getApplicationContext(),SearchActivity.class);
+            startActivity(intent);
         });
         getMostPopularTvShows();
     }
